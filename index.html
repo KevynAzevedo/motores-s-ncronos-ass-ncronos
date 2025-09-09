@@ -176,6 +176,55 @@
                         <li><strong class="text-blue-500">Construção Simples:</strong> Mais robustos, econômicos e amplamente utilizados.</li>
                         <li><strong class="text-blue-500">Fator de Potência:</strong> Geralmente operam com fator de potência indutivo (atrasado).</li>
                     </ul>
+                    <details class="mt-4">
+                    <summary>Mais Informações</summary>
+                     <h3 class="text-2xl font-bold mb-4 text-blue-600">Princípios de funcionamento</h3> 
+                <p class="text-gray-800">
+                O motor assíncrono possui duas partes principais:
+                <br>
+                <span class="text-blue-600 font-semibold">Estator</span>: A parte fixa do motor, que contém um enrolamento alimentado pela rede elétrica. Esse enrolamento cria um campo magnético girante. <br>
+                <span class="text-blue-600 font-semibold">Rotor</span>: A parte móvel do motor.
+                <br>
+                </p>
+                <br>
+
+                <h3 class="text-2xl font-bold mb-4 text-blue-600">Terminais e Ligações</h3> 
+                <p class="text-gray-800">
+                    A caixa de ligação de um motor assíncrono é onde os fios dos enrolamentos do estator chegam e onde as conexões para a alimentação elétrica são feitas. A quantidade de terminais varia de acordo com o tipo de motor e sua configuração.
+                    <br>
+                    Um motor trifásico padrão geralmente possui 6 terminais que correspondem às três bobinas do estator. Cada bobina possui uma extremidade inicial (U1, V1, W1) e uma extremidade final (U2, V2, W2). Esses terminais são numerados ou identificados de forma padronizada (geralmente de 1 a 6 ou com designações como U1, V1, W1, U2, V2, W2).
+                    <br>
+                    A principal utilidade de ter <span class="text-blue-600 font-semibold">6 terminais</span> é permitir a conexão do motor em <span class="text-blue-600 font-semibold">estrela (Δ)</span> ou em <span class="text-blue-600 font-semibold">triângulo (∇)</span>, o que se relaciona com as tensões de operação.
+                    <br>
+                    <br>
+
+                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Ligação em Triângulo (Delta, Δ)</h3>
+                    <span class="text-blue-600 font-semibold">Como é feita</span>: As extremidades iniciais de uma bobina são conectadas às extremidades finais da bobina seguinte (U1 com W2, V1 com U2, W1 com V2). As conexões formam um triângulo, e os pontos de conexão entre as bobinas são ligados às três fases da rede elétrica.
+                    <br>
+                    <span class="text-blue-600 font-semibold">Quando é usada</span>:  Quando a tensão da rede elétrica é menor que a tensão nominal do motor para a qual os enrolamentos foram projetados. Se o motor é nominalmente para 220/380V e a rede é 220V, a ligação em triângulo é utilizada.
+                    <br>
+                    <br>
+
+                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Ligação em Estrela (Y)</h3>
+                    <span class="text-blue-600 font-semibold">Como é feita</span>: As extremidades finais (U2, V2, W2) são interligadas em um ponto comum. As extremidades iniciais (U1, V1, W1) são conectadas às três fases da rede elétrica.
+                    <br>
+                    <span class="text-blue-600 font-semibold">Quando é usada</span>: Quando a tensão da rede elétrica é maior que a tensão nominal do motor para a qual os enrolamentos foram projetados. Por exemplo, se o motor é nominalmente para 220/380V e a rede é 380V, a ligação em estrela é utilizada.
+                    <br>
+                    <br>
+
+                    <h2 class="text-3xl font-semibold mb-6 text-center blue-highlight">Motores de 12 terminais</h2>
+                    Estes são os mais versáteis, pois oferecem até quatro configurações de tensão diferentes, dependendo da forma como os enrolamentos são combinados. Isso é possível porque cada fase do motor é dividida em dois enrolamentos separados, cada um com seus próprios terminais (U1, U2, V1, V2, W1, W2 e U3, U4, V3, V4, W3, W4).
+                    <br>
+                    <br>
+
+                     <h3 class="text-2xl font-bold mb-4 text-blue-600">Duplo Triângulo (Triângulo Paralelo)</h3>
+                    Os enrolamentos de cada fase são ligados em paralelo e, depois, em uma configuração triângulo. Esta ligação é para a menor tensão nominal do motor (ex: 220V).
+                    <br>
+                    <br>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Duplo Estrela (Estrela Paralelo)</h3>
+                    Os enrolamentos de cada fase são ligados em paralelo e, depois, em uma configuração estrela. Esta é utilizada para a segunda menor tensão (ex: 380V).
+                </p>
+                    </details>
                 </div>     
             
             <!-- Tabela Comparativa -->
@@ -240,6 +289,7 @@
                     <details class="mt-4">
                         <summary>Mostrar imagem</summary>
                         <img src="fotos/motor-sincrono.avif" class="w-full h-auto object-cover rounded-md mt-2" alt="Foto de um Motor Síncrono de Relutância Variável">
+                        <img src="fotos/motor-sicronoA.png" alt="">
                     </details>
                 </div>
 
@@ -256,6 +306,7 @@
                     <details class="mt-4">
                         <summary>Mostrar imagem</summary>
                         <img src="fotos/split-phase.jpg" class="w-full h-auto object-cover rounded-md mt-2" alt="Foto de um Motor Split-Phase">
+                        <img src="fotos/Split-phaseA.png" alt="">
                     </details>
                 </div>
             </div>
