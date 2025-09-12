@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,20 +9,18 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         
-        /* Estilo Frutiger Aero com tons de azul e gradientes */
+        /* Estilo Frutiger Aero aprimorado */
         body {
             font-family: 'Inter', sans-serif;
-            /* Fundo com gradiente para a sensação de céu */
             background: linear-gradient(135deg, #a0c4ff, #e7f5ff);
             color: #212121;
             line-height: 1.6;
-            transition: background-color 0.3s ease;
         }
-        
+
         .frutiger-aero-card {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.45);
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px); /* Safari support */
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             border-radius: 1rem;
@@ -41,88 +39,86 @@
         }
 
         .blue-highlight {
-            color: #007bff;
+            color: #005fcc;
         }
-
-        .cta-button {
-            background: linear-gradient(45deg, #007bff, #1e90ff);
-            color: white;
-            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
-            transform: translateY(-2px);
-            filter: brightness(1.1);
-        }
-
+        
         .glossy-divider {
             height: 2px;
             background: linear-gradient(90deg, rgba(30, 144, 255, 0.1) 0%, #1e90ff 50%, rgba(30, 144, 255, 0.1) 100%);
-            opacity: 0.5;
-        }
-
-        .table-container {
-            overflow-x: auto;
+            opacity: 0.6;
+            border: none;
         }
         
-        /* Efeito de brilho nas tabelas */
-        .frutiger-aero-card table {
-            background: rgba(255, 255, 255, 0.2);
+        /* Estilos da Barra de Navegação */
+        .sticky-nav {
+            position: sticky;
+            top: 1rem; /* Adiciona um espaço do topo */
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(31, 38, 135, 0.1);
         }
-        .frutiger-aero-card thead {
-            background: rgba(0, 123, 255, 0.2);
-            color: #212121;
+        .sticky-nav a {
+            transition: color 0.3s ease, transform 0.3s ease;
         }
-        .frutiger-aero-card th {
-            color: #004d99;
-        }
-        .frutiger-aero-card tbody tr:nth-child(even) {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        .frutiger-aero-card tbody tr:hover {
-            background: rgba(0, 123, 255, 0.1);
-        }
-
-        /* Estilo para as abas de imagem */
-        details summary {
-            cursor: pointer;
-            list-style: none; /* Remove a seta padrão */
-            padding: 0.5rem 0;
-            font-weight: 600;
-            color: #007bff;
-            transition: color 0.2s ease;
-        }
-
-        details summary:hover {
+        .sticky-nav a:hover {
             color: #1e90ff;
-        }
-        details summary::-webkit-details-marker {
-            display: none; /* Remove a seta padrão no WebKit */
-        }
-        #ft {
-            min-width: 200px;
-            border-radius: 15px;
-        }
-        #ft2 {
-            min-width: 100px;
-            border-radius: 15px;
-            margin-top: 15px;
-        }
-         #qr {
-            max-width: 200px;
-            border-radius: 15px;
-            display: inline;
-            margin-top: 20px;
+            transform: scale(1.05);
         }
         
+        /* Estilo para a Fórmula Matemática */
+        .formula-display {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.75rem;
+            color: #004d99;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(0, 123, 255, 0.3);
+            text-align: center;
+        }
+        .formula-display .fraction {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 0.5rem;
+            vertical-align: middle;
+        }
+        .formula-display .numerator {
+            padding: 0 0.5rem;
+        }
+        .formula-display .denominator {
+             border-top: 2px solid #004d99;
+             padding: 0 0.5rem;
+        }
+        .mt-4 {
+            text-align: center;
+            color: #004d99;
+            font-size: 1.5em;
+            font-weight: bolder;
+        }
+        .my-12 {
+            margin-top: 10px;
+            font-weight: normal;
+            font-size: 1em;
+        }
     </style>
 </head>
 <body class="p-4 md:p-8">
 
     <!-- Container Principal -->
-    <div class="max-w-7xl mx-auto py-8">
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Barra de Navegação Fixa -->
+        <nav class="sticky-nav mb-12 rounded-full px-4 py-2 w-full max-w-md mx-auto">
+            <div class="flex justify-center items-center space-x-2 md:space-x-4 text-xs sm:text-sm md:text-base font-semibold text-gray-700">
+                <a href="#comparacao" class="p-2">Comparação</a>
+                <a href="#conexoes" class="p-2">Ligações</a>
+                <a href="#escorregamento" class="p-2">Escorregamento</a>
+                <a href="#exemplos" class="p-2">Exemplos</a>
+            </div>
+        </nav>
 
         <!-- Título Principal -->
         <header class="text-center mb-12">
@@ -132,197 +128,198 @@
             <p class="mt-4 text-xl md:text-2xl text-gray-700">
                 Síncronos, Assíncronos e Suas Aplicações
             </p>
-            <div>
-                <img src="fotos/QRcode.png" alt=""
-                id="qr">
-            </div>
+            <img src="fotos/QRcode.png" alt="QR Code para mais informações" class="mx-auto mt-6 rounded-xl shadow-md w-40 h-40">
         </header>
 
-        <!-- Resumo Sucinto -->
-        <div class="frutiger-aero-card p-6 md:p-8 mb-12">
-            <h2 class="text-3xl font-semibold mb-4 blue-highlight">Resumo Sucinto</h2>
-            <p class="text-gray-800">
-                Motores elétricos convertem energia elétrica em energia mecânica de rotação. Eles são classificados em <span class="text-blue-600 font-semibold">síncronos</span> e <span class="text-blue-600 font-semibold">assíncronos</span>, dependendo de como a velocidade do rotor se relaciona com o campo magnético girante do estator. Enquanto os síncronos mantêm uma velocidade constante, os assíncronos operam com uma pequena diferença de velocidade (escorregamento) para funcionar.
-            </p>
-        </div>
-
-        <div class="glossy-divider my-12"></div>
-
-        <!-- Seção de Comparação -->
-        <section id="comparacao-motores" class="mb-12">
-            <h2 class="text-3xl font-semibold mb-6 text-center blue-highlight">Síncronos vs. Assíncronos: Entendendo as Diferenças</h2>
-            <div class="flex flex-col gap-8 items-center">
-                <!-- Card Motor Síncrono -->
-                <div class="frutiger-aero-card p-6 md:p-8 w-full text-center">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Motores Síncronos</h3>
-                    <ul class="list-disc list-inside space-y-2 text-gray-800 text-left">
-                        <li><strong class="text-blue-500">Velocidade Constante:</strong> A velocidade do rotor é a mesma do campo magnético do estator.</li>
-                        <li><strong class="text-blue-500">Sem Escorregamento:</strong> O rotor "trava" com o campo girante.</li>
-                        <li><strong class="text-blue-500">Fator de Potência:</strong> Pode ser ajustado, sendo ideal para correção de fator de potência.</li>
-                        <li><strong class="text-blue-500">Partida Complexa:</strong> Geralmente requer um método de partida auxiliar.</li>
-                    </ul>
-                </div>
-                <!-- Imagem do Motor -->
-                
-                <div class="frutiger-aero-card p-6 md:p-8 w-full flex flex-col justify-center items-center text-center">
-                    <details class="mt-4">
-                    <summary>Mostrar imagem</summary>
-                    <img src="fotos/motor.png" alt="Ilustração de um motor elétrico." class="rounded-md"
-                    id="ft">
-                </details>
-                </div>
-                
-                <!-- Card Motor Assíncrono -->
-                <div class="frutiger-aero-card p-6 md:p-8 w-full text-center">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Motores Assíncronos (Indução)</h3>
-                    <ul class="list-disc list-inside space-y-2 text-gray-800 text-left">
-                        <li><strong class="text-blue-500">Escorregamento:</strong> A velocidade do rotor é sempre ligeiramente menor que a síncrona.</li>
-                        <li><strong class="text-blue-500">Partida Automática:</strong> Não precisam de dispositivos auxiliares para iniciar a rotação.</li>
-                        <li><strong class="text-blue-500">Construção Simples:</strong> Mais robustos, econômicos e amplamente utilizados.</li>
-                        <li><strong class="text-blue-500">Fator de Potência:</strong> Geralmente operam com fator de potência indutivo (atrasado).</li>
-                    </ul>
-                    <details class="mt-4">
-                    <summary>Mais Informações</summary>
-                     <h3 class="text-2xl font-bold mb-4 text-blue-600">Princípios de funcionamento</h3> 
+        <main>
+            <!-- Resumo Sucinto -->
+            <section id="resumo" class="frutiger-aero-card p-6 md:p-8 mb-12">
+                <h2 class="text-3xl font-semibold mb-4 blue-highlight">Resumo Rápido</h2>
                 <p class="text-gray-800">
-                O motor assíncrono possui duas partes principais:
-                <br>
-                <span class="text-blue-600 font-semibold">Estator</span>: A parte fixa do motor, que contém um enrolamento alimentado pela rede elétrica. Esse enrolamento cria um campo magnético girante. <br>
-                <span class="text-blue-600 font-semibold">Rotor</span>: A parte móvel do motor.
-                <br>
+                    Motores elétricos convertem energia elétrica em energia mecânica de rotação. Eles são classificados em <strong class="text-blue-600">síncronos</strong> e <strong class="text-blue-600">assíncronos</strong>, dependendo de como a velocidade do rotor se relaciona com o campo magnético girante do estator. Enquanto os síncronos mantêm uma velocidade constante, os assíncronos operam com uma pequena diferença de velocidade (escorregamento) para funcionar.
                 </p>
-                <br>
+            </section>
 
-                <h3 class="text-2xl font-bold mb-4 text-blue-600">Terminais e Ligações</h3> 
-                <p class="text-gray-800">
-                    A caixa de ligação de um motor assíncrono é onde os fios dos enrolamentos do estator chegam e onde as conexões para a alimentação elétrica são feitas. A quantidade de terminais varia de acordo com o tipo de motor e sua configuração.
-                    <br>
-                    Um motor trifásico padrão geralmente possui 6 terminais que correspondem às três bobinas do estator. Cada bobina possui uma extremidade inicial (U1, V1, W1) e uma extremidade final (U2, V2, W2). Esses terminais são numerados ou identificados de forma padronizada (geralmente de 1 a 6 ou com designações como U1, V1, W1, U2, V2, W2).
-                    <br>
-                    A principal utilidade de ter <span class="text-blue-600 font-semibold">6 terminais</span> é permitir a conexão do motor em <span class="text-blue-600 font-semibold">estrela (Δ)</span> ou em <span class="text-blue-600 font-semibold">triângulo (∇)</span>, o que se relaciona com as tensões de operação.
-                    <br>
-                    <br>
+            <hr class="glossy-divider my-16">
 
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Ligação em Triângulo (Delta, Δ)</h3>
-                    <span class="text-blue-600 font-semibold">Como é feita</span>: As extremidades iniciais de uma bobina são conectadas às extremidades finais da bobina seguinte (U1 com W2, V1 com U2, W1 com V2). As conexões formam um triângulo, e os pontos de conexão entre as bobinas são ligados às três fases da rede elétrica.
-                    <br>
-                    <span class="text-blue-600 font-semibold">Quando é usada</span>:  Quando a tensão da rede elétrica é menor que a tensão nominal do motor para a qual os enrolamentos foram projetados. Se o motor é nominalmente para 220/380V e a rede é 220V, a ligação em triângulo é utilizada.
-                    <br>
-                    <br>
+            <!-- Seção de Comparação -->
+            <section id="comparacao" class="mb-12">
+                <h2 class="text-4xl font-bold mb-8 text-center blue-highlight">Síncronos vs. Assíncronos</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Card Motor Síncrono -->
+                    <article class="frutiger-aero-card p-6 md:p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-600">Motores Síncronos</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-800">
+                            <li><strong class="text-blue-500">Velocidade Constante:</strong> A velocidade do rotor é a mesma do campo magnético do estator.</li>
+                            <li><strong class="text-blue-500">Sem Escorregamento:</strong> O rotor "trava" com o campo girante.</li>
+                            <li><strong class="text-blue-500">Fator de Potência:</strong> Pode ser ajustado, sendo ideal para correção de fator de potência.</li>
+                            <li><strong class="text-blue-500">Partida Complexa:</strong> Geralmente requer um método de partida auxiliar.</li>
+                        </ul>
+                    </article>
+                    
+                    <!-- Card Motor Assíncrono -->
+                    <article class="frutiger-aero-card p-6 md:p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-600">Motores Assíncronos (Indução)</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-800">
+                             <li><strong class="text-blue-500">Escorregamento:</strong> A velocidade do rotor é sempre ligeiramente menor que a síncrona.</li>
+                            <li><strong class="text-blue-500">Partida Automática:</strong> Não precisam de dispositivos auxiliares para iniciar a rotação.</li>
+                            <li><strong class="text-blue-500">Construção Simples:</strong> Mais robustos, econômicos e amplamente utilizados.</li>
+                            <li><strong class="text-blue-500">Fator de Potência:</strong> Geralmente operam com fator de potência indutivo (atrasado).</li>
+                        </ul>
+                    </article>
+                </div>
+                <details class="mt-4">
+                <section class="my-12">
+                    <div class="frutiger-aero-card p-6 md:p-8 w-full flex flex-col items-center">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-600">Estrutura de um Motor Elétrico</h3>
+                        <p class="text-gray-700 text-center mb-6 max-w-2xl">Vista em corte de um motor de indução trifásico, destacando o estator (parte fixa com enrolamentos) e o rotor (parte giratória).</p>
+                        <img src="fotos/motor.png" alt="Estrutura interna de um motor elétrico trifásico" class="rounded-lg shadow-lg max-w-3xl w-full">
+                    </div>
+                </section>
+            </details>
+                <!-- Tabela Comparativa -->
+                <div class="mt-12 overflow-x-auto">
+                    <table class="w-full text-left frutiger-aero-card rounded-xl overflow-hidden">
+                        <thead>
+                            <tr class="bg-blue-100/50">
+                                <th class="p-4 font-semibold text-blue-800">Característica</th>
+                                <th class="p-4 font-semibold text-blue-800">Motor Síncrono</th>
+                                <th class="p-4 font-semibold text-blue-800">Motor Assíncrono</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-blue-200/50">
+                            <tr>
+                                <td class="p-4 font-medium">Velocidade do Rotor</td>
+                                <td class="p-4">Igual à velocidade síncrona.</td>
+                                <td class="p-4">Ligeiramente menor que a síncrona.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium">Escorregamento</td>
+                                <td class="p-4">Zero.</td>
+                                <td class="p-4">Presente e essencial.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium">Construção</td>
+                                <td class="p-4">Mais complexa.</td>
+                                <td class="p-4">Mais simples e robusta.</td>
+                            </tr>
+                             <tr>
+                                <td class="p-4 font-medium">Aplicações</td>
+                                <td class="p-4">Onde a velocidade constante é crucial, como em geradores.</td>
+                                <td class="p-4">Aplicações gerais industriais e domésticas.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Ligação em Estrela (Y)</h3>
-                    <span class="text-blue-600 font-semibold">Como é feita</span>: As extremidades finais (U2, V2, W2) são interligadas em um ponto comum. As extremidades iniciais (U1, V1, W1) são conectadas às três fases da rede elétrica.
-                    <br>
-                    <span class="text-blue-600 font-semibold">Quando é usada</span>: Quando a tensão da rede elétrica é maior que a tensão nominal do motor para a qual os enrolamentos foram projetados. Por exemplo, se o motor é nominalmente para 220/380V e a rede é 380V, a ligação em estrela é utilizada.
-                    <br>
-                    <br>
+            <hr class="glossy-divider my-16">
 
-                    <h2 class="text-3xl font-semibold mb-6 text-center blue-highlight">Motores de 12 terminais</h2>
-                    Estes são os mais versáteis, pois oferecem até quatro configurações de tensão diferentes, dependendo da forma como os enrolamentos são combinados. Isso é possível porque cada fase do motor é dividida em dois enrolamentos separados, cada um com seus próprios terminais (U1, U2, V1, V2, W1, W2 e U3, U4, V3, V4, W3, W4).
-                    <br>
-                    <br>
+            <!-- Seção de Ligações do Motor Assíncrono -->
+            <section id="conexoes" class="mb-12">
+                <h2 class="text-4xl font-bold mb-8 text-center blue-highlight">Ligações do Motor Assíncrono</h2>
+                <div class="frutiger-aero-card p-6 md:p-8">
+                    <p class="text-center text-lg mb-8 text-gray-700">Um motor trifásico padrão possui terminais que permitem diferentes configurações de ligação para se adaptar a várias tensões de rede.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                        <!-- Motores de 6 Terminais -->
+                        <article>
+                            <h3 class="text-2xl font-bold mb-4 text-blue-600">Motores de 6 Terminais</h3>
+                            <p class="mb-6">Permitem duas configurações de tensão (ex: 220/380V) através das ligações Triângulo e Estrela.</p>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold text-xl text-blue-500 mb-2">Ligação Triângulo (Δ)</h4>
+                                <p>Usada para a **menor tensão** nominal. Conecta o início de uma bobina ao fim da seguinte (U1-W2, V1-U2, W1-V2).</p>
+                                <img src="fotos/triangulo.png" alt="Diagrama da ligação em triângulo" class="w-full h-auto object-cover rounded-md mt-4 shadow-md">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-xl text-blue-500 mb-2">Ligação Estrela (Y)</h4>
+                                <p>Usada para a **maior tensão** nominal. Conecta todas as pontas finais das bobinas juntas (U2-V2-W2), formando um ponto neutro.</p>
+                                <img src="fotos/estrela.png" alt="Diagrama da ligação em estrela" class="w-full h-auto object-cover rounded-md mt-4 shadow-md">
+                            </div>
+                        </article>
+                        
+                        <!-- Motores de 12 Terminais -->
+                        <article>
+                            <h3 class="text-2xl font-bold mb-4 text-blue-600">Motores de 12 Terminais</h3>
+                            <p class="mb-6">São mais versáteis, permitindo até quatro níveis de tensão com ligações em paralelo.</p>
+                            
+                             <div class="mb-6">
+                                <h4 class="font-semibold text-xl text-blue-500 mb-2">Duplo Triângulo (Δ Paralelo)</h4>
+                                <p>Para a **menor tensão**. As bobinas de cada fase são ligadas em paralelo, e o conjunto é ligado em triângulo.</p>
+                                <img src="fotos/duplo-triangulo.png" alt="Diagrama da ligação em duplo triângulo" class="w-full h-auto object-cover rounded-md mt-4 shadow-md">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-xl text-blue-500 mb-2">Dupla Estrela (Y Paralelo)</h4>
+                                <p>Para a **segunda menor tensão**. As bobinas de cada fase são ligadas em paralelo, e o conjunto em estrela.</p>
+                                <img src="fotos/duplo-estrela.png" alt="Diagrama da ligação em dupla estrela" class="w-full h-auto object-cover rounded-md mt-4 shadow-md">
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
 
-                     <h3 class="text-2xl font-bold mb-4 text-blue-600">Duplo Triângulo (Triângulo Paralelo)</h3>
-                    Os enrolamentos de cada fase são ligados em paralelo e, depois, em uma configuração triângulo. Esta ligação é para a menor tensão nominal do motor (ex: 220V).
-                    <br>
-                    <br>
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Duplo Estrela (Estrela Paralelo)</h3>
-                    Os enrolamentos de cada fase são ligados em paralelo e, depois, em uma configuração estrela. Esta é utilizada para a segunda menor tensão (ex: 380V).
-                </p>
-                    </details>
-                </div>     
+            <hr class="glossy-divider my-16">
             
-            <!-- Tabela Comparativa -->
-            <div class="mt-12 table-container">
-                <table class="w-full text-left frutiger-aero-card rounded-xl">
-                    <thead class="bg-blue-300">
-                        <tr class="rounded-t-xl">
-                            <th class="p-4 font-semibold rounded-tl-xl">Característica</th>
-                            <th class="p-4 font-semibold">Motor Síncrono</th>
-                            <th class="p-4 font-semibold rounded-tr-xl">Motor Assíncrono</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-blue-200">
-                        <tr>
-                            <td class="p-4 font-medium">Velocidade do Rotor</td>
-                            <td class="p-4">Igual à velocidade síncrona.</td>
-                            <td class="p-4">Ligeiramente menor que a síncrona.</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 font-medium">Escorregamento</td>
-                            <td class="p-4">Zero.</td>
-                            <td class="p-4">Presente e essencial.</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 font-medium">Construção</td>
-                            <td class="p-4">Mais complexa.</td>
-                            <td class="p-4">Mais simples e robusta.</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 font-medium">Aplicações</td>
-                            <td class="p-4">Onde a velocidade constante é crucial, como em geradores.</td>
-                            <td class="p-4">Aplicações gerais industriais e domésticas.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Equação do Escorregamento -->
-        <div class="frutiger-aero-card p-6 md:p-8 w-full flex flex-col items-center">
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">Equação do Escorregamento</h3>
-            <p class="text-gray-800 mb-2 text-center">O escorregamento (s) é a diferença entre a velocidade síncrona (Ns) e a velocidade do rotor (Nr), expressa em porcentagem ou decimal:</p>
-            <img src="https://placehold.co/400x100/c7e3ff/004d99?text=s+%3D+(Ns+-+Nr)+%2F+Ns" alt="Fórmula do escorregamento: s = (Ns - Nr) / Ns" class="max-w-full h-auto rounded-md">
-
-            <img src="fotos/Formula.jpg" alt=""
-            id="ft2">
-        </div>
-    </div>
-        <div class="glossy-divider my-12"></div>
-        
-        <!-- Seção de Exemplos Especiais -->
-        <section id="exemplos-especiais">
-            <h2 class="text-3xl font-semibold mb-6 text-center blue-highlight">Exemplos "Especiais"</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Exemplo Síncrono -->
-                <div class="frutiger-aero-card p-6 md:p-8">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Motor Síncrono de Relutância Variável</h3>
-                    <p class="text-gray-800 mb-4">
-                        Este é um motor síncrono que não usa ímãs permanentes ou enrolamentos no rotor. Ele opera através da força de relutância, onde o rotor, feito de material ferromagnético com polos salientes, busca se alinhar com o campo magnético do estator na posição de menor resistência magnética. Isso o torna extremamente robusto e eficiente em altas velocidades.
-                    </p>
-                    <p class="text-gray-600 italic">
-                        Aplicações: Máquinas-ferramenta e robótica que exigem controle preciso.
-                    </p>
-                    <!-- Aba com foto -->
-                    <details class="mt-4">
-                        <summary>Mostrar imagem</summary>
-                        <img src="fotos/sincrono.jpg" class="w-full h-auto object-cover rounded-md mt-2" alt="Foto de um Motor Síncrono de Relutância Variável">
-                        <img src="fotos/motor-sicronoA.png" alt="">
-                    </details>
+            <!-- Equação do Escorregamento -->
+            <section id="escorregamento" class="mb-12">
+                 <div class="frutiger-aero-card p-6 md:p-8 w-full flex flex-col items-center">
+                    <h2 class="text-3xl font-bold mb-4 text-blue-highlight">Equação do Escorregamento (s)</h2>
+                    <p class="text-gray-800 mb-6 text-center max-w-2xl">O escorregamento é a diferença percentual entre a velocidade do campo magnético (síncrona, Ns) e a velocidade real do rotor (Nr).</p>
+                    <div class="formula-display mb-8">
+                        s =
+                        <div class="fraction">
+                            <span class="numerator">(N<sub>s</sub> - N<sub>r</sub>)</span>
+                            <span class="denominator">N<sub>s</sub></span>
+                        </div>
+                    </div>
+                    <img src="fotos/Formula.jpg" alt="Fórmula da velocidade síncrona" class="rounded-md shadow-md max-w-xs w-full">
                 </div>
+            </section>
 
-                <!-- Exemplo Assíncrono -->
-                <div class="frutiger-aero-card p-6 md:p-8">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Motor CA Assíncrono Tipo Gaiola de Esquilo com Split-Phase</h3>
-                    <p class="text-gray-800 mb-4">
-                        Um exemplo clássico de motor de indução monofásico. Para gerar um torque de partida, ele utiliza dois enrolamentos: um principal e um auxiliar. O enrolamento auxiliar, com um capacitor ou maior resistência, cria um deslocamento de fase que gera um campo magnético girante para iniciar a rotação. Após atingir uma certa velocidade, um interruptor centrífugo desliga o enrolamento auxiliar.
-                    </p>
-                    <p class="text-gray-600 italic">
-                        Aplicações: Eletrodomésticos como máquinas de lavar, ventiladores e compressores.
-                    </p>
-                    <!-- Aba com foto -->
-                    <details class="mt-4">
-                        <summary>Mostrar imagem</summary>
-                        <img src="fotos/split-phase.jpg" class="w-full h-auto object-cover rounded-md mt-2" alt="Foto de um Motor Split-Phase">
-                        <img src="fotos/Split-phaseA.png" alt="">
-                    </details>
+            <hr class="glossy-divider my-16">
+            
+            <!-- Seção de Exemplos Especiais -->
+            <section id="exemplos">
+                <h2 class="text-4xl font-bold mb-8 text-center blue-highlight">Exemplos Especiais de Motores</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Exemplo Síncrono -->
+                    <article class="frutiger-aero-card p-6 md:p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-600">Motor Síncrono de Relutância Variável</h3>
+                        <p class="text-gray-800 mb-4">
+                           Este é um motor síncrono que não usa ímãs permanentes ou enrolamentos no rotor. Ele opera através da força de relutância, onde o rotor busca se alinhar com o campo magnético do estator na posição de menor resistência magnética.
+                        </p>
+                        <p class="text-gray-600 italic">
+                            <strong>Aplicações:</strong> Máquinas-ferramenta e robótica que exigem controle preciso.
+                        </p>
+                        <img src="fotos/sincrono.jpg" class="w-full h-auto object-cover rounded-md mt-4 shadow-md" alt="Foto de um Motor Síncrono de Relutância Variável">
+                        <img src="fotos/motor-sicronoA.png" class="w-full h-auto object-cover rounded-md mt-4 shadow-md" alt="Foto de um Motor Síncrono de Relutância Variável">
+                    </article>
+
+                    <!-- Exemplo Assíncrono -->
+                    <article class="frutiger-aero-card p-6 md:p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-600">Motor Assíncrono com Split-Phase</h3>
+                        <p class="text-gray-800 mb-4">
+                           Um exemplo clássico de motor de indução monofásico. Para gerar um torque de partida, ele utiliza um enrolamento auxiliar que cria um deslocamento de fase, gerando um campo magnético girante para iniciar a rotação. Após atingir certa velocidade, um interruptor desliga o enrolamento auxiliar.
+                        </p>
+                        <p class="text-gray-600 italic">
+                           <strong>Aplicações:</strong> Eletrodomésticos como máquinas de lavar, ventiladores e compressores.
+                        </p>
+                        <img src="fotos/split-phase.jpg" class="w-full h-auto object-cover rounded-md mt-4 shadow-md" alt="Foto de um Motor Split-Phase">
+                        <img src="fotos/Split-phaseA.png" class="w-full h-auto object-cover rounded-md mt-4 shadow-md" alt="Foto de um Motor Split-Phase">
+                    </article>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
+
+        <!-- Rodapé -->
+        <footer class="text-center mt-16 py-8">
+            <p class="text-gray-600">Apresentação sobre motores elétricos.</p>
+            <p class="text-gray-500 text-sm">Design inspirado na estética Frutiger Aero.</p>
+        </footer>
 
     </div>
 
 </body>
 </html>
-
 
